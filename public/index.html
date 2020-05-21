@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+    <script src="../node_modules/three/three.min.js"></script>
+    <script src="../node_modules/maptastic/dist/maptastic.js"></script>
+    <style>
+        #canvas {
+            display: block;
+        }
+        .body {
+            margin: 0;
+        }
+        html {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        var docElm = document.documentElement;
+
+        document.addEventListener('keypress', function(e) {
+
+            if (e.key == "f") {
+                /* View in fullscreen */
+                if (docElm.requestFullscreen) {
+                    docElm.requestFullscreen();
+                }
+                else if (docElm.mozRequestFullScreen) {
+                    docElm.mozRequestFullScreen();
+                }
+                else if (docElm.webkitRequestFullScreen) {
+                    docElm.webkitRequestFullScreen();
+                }
+                else if (docElm.msRequestFullscreen) {
+                    docElm.msRequestFullscreen();
+                }
+
+            }
+            
+        })
+
+        var init = function() {
+            var some_canvas = document.getElementById('canvas')
+            var scene = new THREE.Scene();
+            var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            var renderer = new THREE.WebGLRenderer({
+                canvas: some_canvas
+            });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+
+            var geometry = new THREE.BoxGeometry(1, 1, 1);
+            var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 });
+            var cube = new THREE.Mesh(geometry, material);
+
+            scene.add(cube);
+
+            camera.position.z = 5;
+            camera.position.y = 2;
+
+            renderer.render(scene, camera);
+            
+            window.scene = scene
+            window.camera = camera
+            window.renderer = renderer
+            window.cube = cube
+        }
+
+        document.body.onload = init();
+        var maptastic = new maptastic.Maptastic('canvas');
+
+    </script>
+</body>
+</html>
