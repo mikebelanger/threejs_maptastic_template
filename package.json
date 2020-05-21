@@ -1,0 +1,26 @@
+{
+  "name": "threejs_maptastic_template",
+  "version": "1.0.0",
+  "description": "My starter template for anything 3d and video mapping.  Project [Three.js](https://threejs.org) onto stuff with [maptastic](https://github.com/glowbox/maptasticjs)!",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "maptastic": "^3.0.0",
+    "three": "^0.116.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikebelanger/threejs_maptastic_template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikebelanger/threejs_maptastic_template/issues"
+  },
+  "homepage": "https://github.com/mikebelanger/threejs_maptastic_template#readme"
+}
