@@ -6,7 +6,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "maptastic": "^3.0.0",
-    "three": "^0.116.1"
+    "three": "^0.125.0"
   },
   "devDependencies": {},
   "scripts": {
